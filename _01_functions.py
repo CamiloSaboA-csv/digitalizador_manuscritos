@@ -27,21 +27,15 @@ def data_from_google_drive(url):
 
 
 
-
-# build a function to import data and prepare for a machine learning model
-def import_data(path):
-    """
-    Import images from path.
-    :param path: Path to images.
-    :return: List of images.
-    """
-    images = []
-    labels = []
-    for filename in os.listdir(path):
-        img = mpimg.imread(os.path.join(path, filename))
-        images.append(img)
-        labels.append(filename.split('.')[0])
-    return images, labels
+# function for plot the images
+def plot_images(dataset):
+    for i in range(9):
+        plt.subplot(330 + 1 + i)
+        plt.imshow(dataset[i][0][0])
+        plt.grid(False)
+        plt.xticks([])
+        plt.yticks([])
+    plt.show()
 
 
 
