@@ -33,3 +33,10 @@ def model_creation():
         # 52 output neuron.
         tf.keras.layers.Dense(52, activation='softmax')
     ])
+    return model
+
+def compile(modelo):
+    modelo.compile(loss='categorical_crossentropy',
+                optimizer='adam',
+                metrics=['accuracy'])
+
